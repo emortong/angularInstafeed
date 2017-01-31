@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Angular Photofeed</title>
+</head>
+<body ng-app="instaApp">
+  <div ng-controller="myController">
+  <div ng-repeat="feed in instafeed">
+  <div>
+    <img src={{feed.images.standard_resolution.url}}>
+  </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+<script src="./js/myApp.js"></script>
+<script src="./js/controllers.js"></script>
+<script src="./js/providers.js"></script>
+</body>
+</html>
