@@ -2,10 +2,32 @@
   Top bar styles
 --------------------------*/
 
-.exampleDiv {
-  width: 200px;
-  height: 400px;
+body {
+  align-content: center;
+  margin: auto;
+  font-family: helvetica;
+  max-width: 800px;
+  min-width: 800px;
 }
+
+h1 {
+  font-family: Roboto;
+  margin-left: 12%;
+  font-size: 50px;
+  font-style: bold;
+  color: grey;
+}
+
+#searchBar {
+  width: 40%;
+  float: left;
+  height: 40%;
+  font-size: 20px;
+  padding: 6px;
+  font-weight: 100;
+}
+
+
 
 .bar{
   background-color:#5c9bb7;
@@ -17,12 +39,13 @@
   box-shadow: 0 1px 1px #ccc;
   border-radius: 2px;
   min-width: 60%;
-  width: 60%;
+  width: 90%;
   padding: 10px;
   margin: 45px auto 25px;
   position:relative;
   text-align:right;
   line-height: 1;
+
 }
 
 .bar a{
@@ -66,3 +89,63 @@
   outline: none;
   text-indent: 40px;
 }
+
+.list {
+  align-content: center;
+  margin: auto;
+}
+
+.list img {
+  width: 20%;
+}
+
+.content {
+  width: 90%;
+  align-content: center;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+  padding: 10px;
+}
+
+.list span {
+  font-size: 16px;
+  font-family: helvetica;
+  vertical-align: top;
+  margin-left: 10px;
+  font-style: bold;
+  color: gray;
+}
+
+hr {
+  color: gray;
+  opacity: 0.7;
+  width: 100%;
+  margin-left: -0%;
+}
+
+/*.grid img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}*/
+
+.grid {
+  padding: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+/*  max-width: 80%;
+  min-width: 30%;*/
+}
+
+div.grid div {
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 360px;
+  height: 350px;
+}
+

@@ -3,15 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Angular Photofeed</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 <body ng-app="instaApp">
-  <div ng-controller="myController">
-  <div ng-repeat="feed in instafeed">
-  <div>
-    <img src={{feed.images.standard_resolution.url}}>
+  <header>
+    <h1>Angular.js Instagram Feed</h1>
+  </header>
+  <div class="bar">
+    <input type="text" placeholder="search" id="searchBar" ng-model="searchCaptionFilter">
+    <a class="list-icon" ng-class="{active: layout == 'list'}" ng-click="layout = 'list'"></a>
+    <a class="grid-icon" ng-class="{active: layout == 'grid'}" ng-click="layout = 'grid'"></a>
   </div>
+  <div ng-controller="myController" class="content">
+    <div ng-show="layout == 'grid'" class="grid">
+      <div ng-repeat="feed in instafeed | filter:searchCaptionFilter" style="background-image: url({{feed.images.low_resolution.url}})">
+        <a href="{{feed.link}}" target="_blank"></a>
+      </div>
+    </div>
+     <div ng-show="layout == 'list'" class="list">
+      <div ng-repeat="feed in instafeed | filter:searchCaptionFilter">
+        <a href="{{feed.link}}"><img src={{feed.images.thumbnail.url}}></a>
+        <span>{{feed.caption.text}}</span>
+      <hr>
+      </div>
+    </div>
   </div>
-</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
 <script src="./js/myApp.js"></script>
